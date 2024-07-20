@@ -1,9 +1,15 @@
+/* Variables CSS */
 :root {
   --main-color: #9a1534;
+  --dark-red: darkred;
+  --light-grey: lightgrey;
+  --dark-green: darkgreen;
+  --white: #ffffff;
 }
 
+/* Estilos Globales */
 html {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -16,54 +22,70 @@ body {
   justify-content: center;
 }
 
+.modal-input {
+  display: flex;
+  flex-direction: column;
+}
+
+form input {
+  padding: 2%;
+}
+
+form button {
+  border-radius: 4px;
+  color: white;
+  border: none;
+  background-color: var(--dark-green);
+  width: 120px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Header */
 .header {
-  display:grid;
-  width: 99.5% ;
+  display: grid;
+  width: 99.5%;
   height: 30px;
   border-radius: 6px;
-  border-style: solid;
-  border-color: var(--main-color);
+  border: solid var(--main-color);
   padding: 0;
 }
 
-.nav-header{
-  display:flex;
+.nav-header {
+  display: flex;
   align-items: center;
-  width:100% ;
+  width: 100%;
   background-color: var(--main-color);
-  color: white;
+  color: var(--white);
   justify-content: space-around;
   padding: 0;
 }
 
-h4{
+h4 {
   margin: 0;
   padding: 0;
   cursor: pointer;
 }
 
-.logo{
-  display: flex;
-  align-items: center;
-  width: 36px;
-  height: 36px;
-}
-
-.buscador{
+.buscador {
   height: 70%;
   width: 50%;
   border-radius: 4px;
-  border-color: var(--main-color);
-  border-style: solid;
+  border: solid var(--main-color);
 }
 
-.filtrado{
+.filtrado {
   border-radius: 4px;
-  border-color: var(--main-color);
-  background-color: white;
+  border: solid var(--main-color);
+  background-color: var(--white);
   cursor: pointer;
 }
 
+/* Tabla */
 .table_container {
   max-height: 30vh;
   overflow-y: auto;
@@ -75,55 +97,55 @@ table {
   width: 100%;
   border-collapse: collapse;
 }
+
 th,
 td {
   border: 1px solid #ddd;
   padding: 8px;
-  background-color: #ffffff;
+  background-color: var(--white);
 }
 
 th {
-  background-color: #f2f2f2;
+  background-color: var(--main-color);
+  color: var(--white);
   position: sticky;
   top: 0;
   z-index: 1;
 }
 
-th {
-  background-color: var(--main-color);
-  color: #ffffff;
-}
-
-.footer{
+/* Footer */
+.footer {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  background-color:lightgray;
+  background-color: var(--light-grey);
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   align-items: center;
 }
 
-.contenedor_botones{
+.contenedor_botones {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap:8px;
-  margin: 2dvw;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 2vw;
 }
 
-.botones{
+.botones {
   border-radius: 4px;
-  border-color: white;
+  border: none;
   width: 130px;
   height: 30px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.botones:hover{
+.botones:hover {
   background-color: lightcyan;
 }
 
-.botonesred{
+.botonesred {
+  color: white;
   border-radius: 4px;
   border-color: white;
   width: 130px;
@@ -135,46 +157,44 @@ th {
   cursor: pointer;
 }
 
-.botonesred:hover{
+.botonesred:hover {
   background-color: red;
 }
 
-p{
-  color: white;
-}
-
-a{
+.botones a {
   color: black;
   text-decoration: none;
 }
 
-#contenedor_vender{
-  margin: 2dvw;
+#contenedor_vender {
+  margin: 2vw;
   display: flex;
 }
 
-#vender{
+#vender {
   border-radius: 4px;
-  border-color: white;
-  background-color: darkgreen;
+  border: none;
+  background-color: var(--dark-green);
   width: 120px;
   height: 50px;
   justify-content: center;
-  align-items: center ;
+  align-items: center;
   display: flex;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-#vender:hover{
+#vender:hover {
   background-color: seagreen;
 }
 
-h3{
+#vender h3 {
   font-size: large;
   font-weight: 500;
-  color: white;
+  color: var(--white);
 }
 
+/* Contenedor Principal */
 .contenedor {
   width: 80vw;
   flex: auto;
@@ -183,34 +203,88 @@ h3{
   align-content: center;
 }
 
-/*Pagina de Reportes*/
-.derechos{
+/* Modales */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 10px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
   color: black;
-  font-weight: 600;
-  margin: 8px;
-}
-
-#reporte{
-  border-radius: 4px;
-  border-color: white;
-  background-color: var(--main-color);
-  width: 160px;
-  height: 50px;
-  justify-content: center;
-  align-items: center ;
-  display: flex;
+  text-decoration: none;
   cursor: pointer;
 }
 
-#reporte:hover{
-  background-color: darkred;
+/* Botones del Modal */
+.btn-ingresar,
+.btn-egresar,
+.btn-confirmar,
+.btn-cancelar {
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.boton_inventario{
-  margin-left: 8px ;
-  border-radius: 4px;
-  border-color: white;
-  width: 130px;
-  height: 30px;
-  cursor: pointer;
+.btn-ingresar {
+  background-color: var(--dark-green);
+  color: var(--white);
+}
+
+.btn-ingresar:hover {
+  background-color: seagreen;
+}
+
+.btn-egresar {
+  background-color: var(--dark-red);
+  color: var(--white);
+}
+
+.btn-egresar:hover {
+  background-color: red;
+}
+
+.btn-confirmar {
+  background-color: var(--dark-red);
+  color: var(--white);
+}
+
+.btn-confirmar:hover {
+  background-color: red;
+}
+
+.btn-cancelar {
+  background-color: grey;
+  color: var(--white);
+}
+
+.btn-cancelar:hover {
+  background-color: var(--light-grey);
 }

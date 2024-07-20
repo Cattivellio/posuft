@@ -1,5 +1,5 @@
 <?php
-$servername = "http://sql303.infinityfree.com/";
+$servername = "sql303.infinityfree.com";
 $username = "if0_36858889"; 
 $password = "ufetista2024"; 
 $dbname = "posuftdb";
